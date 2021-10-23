@@ -1,0 +1,19 @@
+version: "3.7"
+
+networks:
+    pg-backend:
+  
+services:
+    postgres:
+        image: 2cb213333729
+        expose:
+            - 5432
+        ports:
+            - 127.0.0.1:5432:5432
+        networks:
+            - pg-backend
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+
+volumes:
+    postgres-data:
